@@ -32,7 +32,7 @@ namespace SalesWebMVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SalesRecrods",
+                name: "SalesRecord",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -44,9 +44,9 @@ namespace SalesWebMVC.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SalesRecrods", x => x.Id);
+                    table.PrimaryKey("PK_SalesRecord", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SalesRecrods_Seller_SellerId",
+                        name: "FK_SalesRecord_Seller_SellerId",
                         column: x => x.SellerId,
                         principalTable: "Seller",
                         principalColumn: "Id",
@@ -54,8 +54,8 @@ namespace SalesWebMVC.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SalesRecrods_SellerId",
-                table: "SalesRecrods",
+                name: "IX_SalesRecord_SellerId",
+                table: "SalesRecord",
                 column: "SellerId");
 
             migrationBuilder.CreateIndex(
@@ -67,7 +67,7 @@ namespace SalesWebMVC.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SalesRecrods");
+                name: "SalesRecord");
 
             migrationBuilder.DropTable(
                 name: "Seller");
